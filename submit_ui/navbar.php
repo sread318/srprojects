@@ -13,8 +13,8 @@
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
-        <?php if ($loggedIn == true) { ?>
-        <li class="active"><a href="#"><span class='glyphicon glyphicon-user'></span> firstname lastname</a></li>
+        <?php if (isset($_SESSION["patroninfo"])) { ?>
+        <li class="active"><a href="#"><span class='glyphicon glyphicon-user'></span> <?=$_SESSION["patroninfo"]["firstname"]?> <?=$_SESSION["patroninfo"]["lastname"]?></a></li>
         <li><a href="#"><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>
         <li><a href="#"><span class='glyphicon glyphicon-info-sign'></span> Help</a></li>
         <?php } ?>

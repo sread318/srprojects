@@ -15,14 +15,14 @@
         </div>
         <div class="form-password">
           <label for="password" class="control-label">Password:</label>
-          <input type="text" class="form-control" id="password">
+          <input type="password" class="form-control" id="password">
         </div>
-        </form>
-      </div>
+      </form>
       <div class="modal-footer">
-        <button type="submit" class="btn btn-primary" id="loginbtn">Log in</button>
+        <input type="submit" class="btn btn-primary" id="loginbtn" value="Log in">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
+    </div>
     </div>
   </div>
 </div>

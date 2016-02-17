@@ -5,7 +5,6 @@
     <title>LC Senior Projects</title>
   </head>
   <body>
-    <?php // $loggedIn = true; ?>
     <?php include 'navbar.php'; ?>
     <?php include 'login.php'; ?>
 
