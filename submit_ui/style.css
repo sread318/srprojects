@@ -73,7 +73,7 @@ hr {
 }
 
 .col-md-4 {
-  text-align: center !important;
+  /* text-align: center !important; */
   color: #000;
   /*font-family: verdana, arial, sans-serif;*/
 }
