@@ -16,4 +16,4 @@
 <!-- Style for this page -->
 <link rel="stylesheet" href="style.css">
 <!-- Script for LDAP auth -->
-<script src="login.js"></script>
+<script src="global.js"></script>

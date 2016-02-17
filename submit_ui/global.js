@@ -39,4 +39,10 @@ $( document ).ready(function() {
     });
   });
 
+  // Logout function
+  $('#logoutbtn').click(function(){
+    $.post("auth.php", { logout:true }, function(){
+      window.location.assign("welcome.php");
+    });
+  });
 });

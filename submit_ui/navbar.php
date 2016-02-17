@@ -15,8 +15,10 @@
       <ul class="nav navbar-nav navbar-right">
         <?php if (isset($_SESSION["patroninfo"])) { ?>
         <li class="active"><a href="#"><span class='glyphicon glyphicon-user'></span> <?=$_SESSION["patroninfo"]["firstname"]?> <?=$_SESSION["patroninfo"]["lastname"]?></a></li>
-        <li><a href="#"><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>
+        <li><a href="#" id="logoutbtn"><span class='glyphicon glyphicon-log-out'></span> Logout</a></li>
         <li><a href="#"><span class='glyphicon glyphicon-info-sign'></span> Help</a></li>
+        <?php } else { ?>
+        <li><a href="http://library.lclark.edu/"><span class='glyphicon glyphicon-home'></span> Watzek Home</a></li>
         <?php } ?>
       </ul>
     </div>

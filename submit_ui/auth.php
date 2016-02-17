@@ -1,6 +1,8 @@
 <?php
-session_start();
+
 if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role'])){
+
+    session_start();
 
     $ldap = ldap_connect("ldap.lclark.edu");
     $username = $_POST['username'];
@@ -37,7 +39,7 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role'
 
       // For faculty
       if ($role == 'faculty'){
-        $_SESSION["patroninfo"]["major"]=$ldapinfo[0]["lclarkmajor"][0];
+        $_SESSION["patroninfo"]["department"]=$ldapinfo[0]["departmentnumber"][0];
       }
 
       // For staff
@@ -61,5 +63,29 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role'
       echo json_encode($result);
     }
 
+}
+else if ($_POST['logout'] == true){
+
+  // Logout code taken from https://secure.php.net/session_destroy
+
+  // Initialize the session.
+  // If you are using session_name("something"), don't forget it now!
+  session_start();
+
+  // Unset all of the session variables.
+  $_SESSION = array();
+
+  // If it's desired to kill the session, also delete the session cookie.
+  // Note: This will destroy the session, and not just the session data!
+  if (ini_get("session.use_cookies")) {
+      $params = session_get_cookie_params();
+      setcookie(session_name(), '', time() - 42000,
+          $params["path"], $params["domain"],
+          $params["secure"], $params["httponly"]
+      );
+  }
+
+  // Finally, destroy the session.
+  session_destroy();
 }
 ?>

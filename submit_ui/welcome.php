@@ -19,17 +19,17 @@
           <div class="col-md-4">
             <h2 class="role">Students</h2>
             <p>Submit a project for review and publishing.</p>
-            <p><a data-role="student" class="btn btn-primary btn-sm" href="#" role="button" data-toggle='modal' data-target='#loginModal'>Log in &raquo;</a></p>
+            <p><a data-role="student" class="btn btn-primary btn-sm" href="#" role="button" data-toggle='modal' data-target='#loginModal'>Log in <span class='glyphicon glyphicon-log-in'></span></a></p>
           </div>
           <div class="col-md-4">
             <h2 class="role">Faculty</h2>
             <p>Review and approve or deny student projects.</p>
-            <p><a data-role="faculty" class="btn btn-primary btn-sm" href="#" role="button" data-toggle='modal' data-target='#loginModal'>Log in &raquo;</a></p>
+            <p><a data-role="faculty" class="btn btn-primary btn-sm" href="#" role="button" data-toggle='modal' data-target='#loginModal'>Log in <span class='glyphicon glyphicon-log-in'></span></a></p>
          </div>
           <div class="col-md-4">
             <h2 class="role">Staff</h2>
             <p>Manage the review and publishing process.</p>
-            <p><a data-role="staff" class="btn btn-primary btn-sm" href="#" role="button" data-toggle='modal' data-target='#loginModal'>Log in &raquo;</a></p>
+            <p><a data-role="staff" class="btn btn-primary btn-sm" href="#" role="button" data-toggle='modal' data-target='#loginModal'>Log in <span class='glyphicon glyphicon-log-in'></span></a></p>
           </div>
         </div>
         </div>
