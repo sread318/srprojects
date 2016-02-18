@@ -50,8 +50,6 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role'
           $_SESSION["patroninfo"]["department"]=$ldapinfo[0]["departmentnumber"][0];
           break;
 
-        case default:
-          break;
       }
 
       /*
