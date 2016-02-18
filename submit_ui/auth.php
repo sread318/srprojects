@@ -2,8 +2,6 @@
 
 if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role'])){
 
-    // Login code
-
     session_start();
 
     $ldap = ldap_connect("ldap.lclark.edu");
@@ -25,36 +23,11 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role'
 
       // Basic information
       $_SESSION["patroninfo"]["username"]=$username;
-      $_SESSION["patroninfo"]["role"]=$role; // this role is only tied to which button the patron clicked in the welcome portal
+      $_SESSION["patroninfo"]["role"]=$role;
       $_SESSION["patroninfo"]["email"]=$ldapinfo[0]["mail"][0];
       $_SESSION["patroninfo"]["lastname"]=$ldapinfo[0]["sn"][0];
       $_SESSION["patroninfo"]["firstname"]=$ldapinfo[0]["givenname"][0];
-      $_SESSION["patroninfo"]["ldaprole"]=$ldapinfo[0]["lclarkstatus"][0]; // note that this is derived from LDAP, not the button
-
-      // Role-specific information
-      switch ($role){
-
-        case 'student':
-          $_SESSION["patroninfo"]["major"]=$ldapinfo[0]["lclarkmajor"][0];
-          foreach ($ldapinfo[0]["lclarkadvisor"] as $advisor){ // LDAP should give us a full list of every advisor for students
-            $_SESSION["patroninfo"]["advisors"][$advisor];
-          }
-          break;
-
-        case 'faculty':
-          $_SESSION["patroninfo"]["department"]=$ldapinfo[0]["departmentnumber"][0];
-          break;
-
-        case 'staff':
-          $_SESSION["patroninfo"]["title"]=$ldapinfo[0]["title"][0];
-          $_SESSION["patroninfo"]["department"]=$ldapinfo[0]["departmentnumber"][0];
-          break;
-
-        case default:
-          break;
-      }
-
-      /*
+      $_SESSION["patroninfo"]["ldaprole"]=$ldapinfo[0]["lclarkstatus"][0];
 
       // For students
       if ($role == 'student'){
@@ -75,24 +48,19 @@ if(isset($_POST['username']) && isset($_POST['password']) && isset($_POST['role'
         $_SESSION["patroninfo"]["department"]=$ldapinfo[0]["departmentnumber"][0];
       }
 
-      */
-
-      // notify that the authentication succeeded and close the LDAP connection
-
       $result = array();
       $result['success'] = true;
       $result['msg'] = 'Welcome, '.$_SESSION["patroninfo"]["firstname"].' '.$_SESSION["patroninfo"]["lastname"].'!';
       $result['role'] = $role;
-      echo json_encode($result); // necessary to pass multiple parameters back to our javascript
+      echo json_encode($result);
       @ldap_close($ldap);
 
-    }
-    else { // tell the user to retry the authentication
+    } else {
       $result = array();
       $result['success'] = false;
       $result['msg'] = 'Invalid username / password.';
       $result['role'] = $role;
-      echo json_encode($result); // don't close LDAP connection until we succeed
+      echo json_encode($result);
     }
 
 }

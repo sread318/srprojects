@@ -32,63 +32,14 @@ hr {
   box-shadow: -1px 2px 17px 4px rgba(0,0,0,0.3);
 }
 
+/*
+ * Typography
+ */
+
 .page-header {
    color: #efefdc !important;
    text-transform: uppercase;
  }
-
-/*
- * Progress area
- */
-
-#progress-crumbs {
-    text-transform: capitalize;
-    background-color: #efefdc;
-}
-
-#progress-crumbs a {
-  color: #000;
-}
-
-#progress-crumbs a:hover {
-  text-decoration: none;
-  color: #000;
-}
-
-#progress-crumbs a:visited {
-  text-decoration: none;
-}
-
-#progress-bar {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  background-color: #7e8162 !important;
-  margin-top: 30px;
-  -webkit-box-shadow: -1px 2px 17px 4px rgba(0,0,0,0.3);
-  -moz-box-shadow: -1px 2px 17px 4px rgba(0,0,0,0.3);
-  box-shadow: -1px 2px 17px 4px rgba(0,0,0,0.3);
-  border-radius: 6px;
-  padding: 20px;
-}
-
-.progress {
-  margin: auto;
-}
-
-/*
- * Submission forms
- */
-
- .form-container {
-   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-   background-color: #efefdc !important;
-   margin-top: 30px;
-   -webkit-box-shadow: -1px 2px 17px 4px rgba(0,0,0,0.3);
-   -moz-box-shadow: -1px 2px 17px 4px rgba(0,0,0,0.3);
-   box-shadow: -1px 2px 17px 4px rgba(0,0,0,0.3);
-   border-radius: 6px;
-   padding: 20px;
- }
-
 
 /*
  * Global add-ons
@@ -155,9 +106,6 @@ hr {
 }
 .navbar-nav>li>a {
   color: #cccc99 !important;
-}
-.navbar-nav>li>a:hover {
-  color: #fff !important;
 }
 .navbar-nav>.active>a {
   color: #efefdc !important;
